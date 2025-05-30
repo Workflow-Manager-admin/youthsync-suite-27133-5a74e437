@@ -3,7 +3,8 @@ import CircularProgress from "../components/CircularProgress";
 import "../styles/focusflow.css";
 
 /**
- * FocusFlow Page: Pomodoro timer with session count, custom duration
+ * FocusFlow Page: Polished Pomodoro timer —
+ * Modern, energetic yet focused UI with strong visual feedback and polished controls.
  */
 // PUBLIC_INTERFACE
 function FocusFlowPage() {
@@ -12,8 +13,10 @@ function FocusFlowPage() {
   const [timerOn, setTimerOn] = useState(false);
   const [completed, setCompleted] = useState(0);
   const [input, setInput] = useState(duration);
+  const [sessionInc, setSessionInc] = useState(false); // Animation flag for completed
   const timerRef = useRef(null);
 
+  // Timer ticking effect
   useEffect(() => {
     if (timerOn) {
       timerRef.current = setInterval(() => {
@@ -21,6 +24,7 @@ function FocusFlowPage() {
           if (t <= 1) {
             setTimerOn(false);
             setCompleted((c) => c + 1);
+            setSessionInc(true);
             // Simple sound alert
             try {
               const ctx = new (window.AudioContext || window.webkitAudioContext)();
