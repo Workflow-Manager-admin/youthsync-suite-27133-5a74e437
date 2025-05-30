@@ -1,4 +1,5 @@
 :root {
+  font-size: 16px; /* 1rem = 16px base for easy scaling */
   /* Brand/Core */
   --primary: #18181b;
   --secondary: #27272a;
@@ -34,7 +35,7 @@
   --splitmate-bg: #162028;
   --gradeboost-bg: #22232a;
   --focusflow-bg: #181f2b;
-  
+
   /* Icon & Card Gradients */
   --gradient-gradeboost-icon: linear-gradient(135deg, #263042 70%, #20c9b6 140%);
   --gradient-splitmate-icon: linear-gradient(145deg, #232938 60%, #4188cd 100%, #62e6ae 180%);
@@ -46,36 +47,37 @@
   --gradient-navbar-link-active: var(--accent);
 
   /* Landing Glows & Shadows */
-  --glow-main: 0 0 16px 4px var(--accent);
-  --glow-gradeboost: 0 2px 28px 0 #29f3d620;
-  --glow-splitmate: 0 0 54px 10px #62e6ae84,0 0 0px 3px #7ae6a460,0 0 62px 14px #53e69072;
-  --glow-focusflow: 0 0 48px 12px #38bdf8cc, 0 0 0px 2px #b773f792, 0 0 72px 20px #38bdf870;
+  --glow-main: 0 0 1rem 0.25rem var(--accent);
+  --glow-gradeboost: 0 0.125rem 1.75rem 0 #29f3d620;
+  --glow-splitmate: 0 0 3.375rem 0.625rem #62e6ae84,0 0 0 0.1875rem #7ae6a460,0 0 3.875rem 0.875rem #53e69072;
+  --glow-focusflow: 0 0 3rem 0.75rem #38bdf8cc, 0 0 0 0.125rem #b773f792, 0 0 4.5rem 1.25rem #38bdf870;
 
   /* App/Component-specific Shadows */
-  --box-shadow-navbar: 0 2px 18px 0 rgba(24,24,27,0.10);
-  --box-shadow-btn: 0 0 8px #38bdf857;
-  --box-shadow-card: 0 8px 38px 8px #1be4e53a, 0 1.5px 4px #38bdf811;
-  --box-shadow-card-focusflow: 0 8px 36px 4px #38bdf844, 0 2px 16px #7fd0ff1a;
-  --box-shadow-card-splitmate: 0 8px 36px 0 #62e6ae50, 0 1.5px 8px #38bdf822;
-  --box-shadow-card-landing: 0 2px 28px 0 #29f3d620;
-  --box-shadow-btn-calc: 0 0 13px #20eedc3d;
+  --box-shadow-navbar: 0 0.125rem 1.125rem 0 rgba(24,24,27,0.10);
+  --box-shadow-btn: 0 0 0.5rem #38bdf857;
+  --box-shadow-card: 0 0.5rem 2.375rem 0.5rem #1be4e53a, 0 0.09375rem 0.25rem #38bdf811;
+  --box-shadow-card-focusflow: 0 0.5rem 2.25rem 0.25rem #38bdf844, 0 0.125rem 1rem #7fd0ff1a;
+  --box-shadow-card-splitmate: 0 0.5rem 2.25rem 0 #62e6ae50, 0 0.09375rem 0.5rem #38bdf822;
+  --box-shadow-card-landing: 0 0.125rem 1.75rem 0 #29f3d620;
+  --box-shadow-btn-calc: 0 0 0.8125rem #20eedc3d;
 
   /* State, Error, Danger */
   --danger: #ff4680;
   --danger-bg: #ff468018;
   --danger-dark: #fa2360;
-  --danger-shadow: 0 2px 12px #ff46802c;
+  --danger-shadow: 0 0.125rem 0.75rem #ff46802c;
 
   /* Accents for Progress & Interactivity */
   --progress-accent: #38bdf8;
-  --progress-shadow: 0 0 8px #38bdf886;
-  --complete-glow: 0 0 12px 3px #38bdf87c,0 1px 8px #b773f766;
+  --progress-shadow: 0 0 0.5rem #38bdf886;
+  --complete-glow: 0 0 0.75rem 0.1875rem #38bdf87c,0 0.0625rem 0.5rem #b773f766;
 
   /* Focus rings */
-  --focus-accent: 0 0 0 3px #38bdf87c;
-  --focus-danger: 0 0 0 3px #ff468083;
+  --focus-accent: 0 0 0 0.1875rem #38bdf87c;
+  --focus-danger: 0 0 0 0.1875rem #ff468083;
 }
 
+/* Use rem/em on structure for scalability */
 .ys-dark {
   background: var(--primary);
   color: var(--text-color);
@@ -90,12 +92,12 @@
 
 .ys-main {
   flex: 1 1 auto;
-  padding-top: 76px;
+  padding-top: 4.75rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .ys-main {
-    padding-top: 96px;
+    padding-top: 6rem;
   }
 }
 
@@ -103,7 +105,7 @@
   color: var(--footer-text);
   background: var(--primary);
   border-top: 1px solid var(--border);
-  padding: 16px 0 8px 0;
+  padding: 1rem 0 0.5rem 0;
   text-align: center;
   font-size: 0.9rem;
   user-select: none;
@@ -111,9 +113,9 @@
 }
 
 .ys-container {
-  max-width: 900px;
+  max-width: 56.25rem;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
