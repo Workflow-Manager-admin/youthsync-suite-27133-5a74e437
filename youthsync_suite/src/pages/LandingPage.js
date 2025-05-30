@@ -51,14 +51,17 @@ const LandingPage = () => {
     {
       title: "GradeBoost",
       accent: "from-cyan-400/80 via-sky-500/70 to-blue-300/40",
+      cardClass: "ys-landing-gradeboost",
     },
     {
       title: "SplitMate",
       accent: "from-blue-400/80 via-teal-400/60 to-cyan-300/30",
+      cardClass: "ys-landing-splitmate",
     },
     {
       title: "FocusFlow",
       accent: "from-cyan-500/80 via-blue-400/60 to-teal-200/40",
+      cardClass: "ys-landing-focusflow",
     },
   ];
   return (
@@ -80,6 +83,7 @@ const LandingPage = () => {
             accent={tool.accent}
             title={tool.title}
             description={toolDescriptions[tool.title]}
+            cardClass={tool.cardClass}
             onClick={() => navigate(`/${tool.title.toLowerCase()}`)}
           />
         ))}
@@ -96,14 +100,14 @@ const LandingPage = () => {
  * Renders an icon card where the glow and scale animation trigger
  * only when hovering/focusing the icon itself (not the button/card).
  */
-function IconCircleCard({ icon, accent, title, description, onClick }) {
+function IconCircleCard({ icon, accent, title, description, onClick, cardClass }) {
   // Glow and scale only when hovering icon
   return (
     <button
       className={
         `relative flex flex-col gap-1 items-center justify-center px-3 py-3
         ys-landing-cardbtn
-        outline-none border-none bg-none`
+        outline-none border-none bg-none ${cardClass ?? ""}`
       }
       aria-label={`Go to ${title}`}
       tabIndex={0}
