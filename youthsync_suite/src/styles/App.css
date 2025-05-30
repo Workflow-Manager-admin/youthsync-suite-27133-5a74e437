@@ -1,0 +1,55 @@
+:root {
+  --primary: #18181b;
+  --secondary: #27272a;
+  --accent: #38bdf8;
+  --dark-bg: #18181b;
+  --light-bg: #22232a;
+  --text-color: #fff;
+  --text-secondary: #b6d5f7;
+  --border: #222;
+  --footer-text: #8ba0b3;
+  --danger: #ff4680;
+  --glow: 0 0 16px 4px var(--accent);
+}
+
+.ys-dark {
+  background: var(--primary);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+.ys-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary);
+}
+
+.ys-main {
+  flex: 1 1 auto;
+  padding-top: 76px;
+}
+
+@media (min-width: 768px) {
+  .ys-main {
+    padding-top: 96px;
+  }
+}
+
+.ys-footer {
+  color: var(--footer-text);
+  background: var(--primary);
+  border-top: 1px solid var(--border);
+  padding: 16px 0 8px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  user-select: none;
+  letter-spacing: .01em;
+}
+
+.ys-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/CircularProgress.css";
 
 /**
  * PUBLIC_INTERFACE
@@ -23,7 +24,7 @@ function CircularProgress({
   const percent = Math.min(Math.max(value, 0), max) / max;
   const dash = percent * circ;
   return (
-    <div className="flex flex-col items-center justify-center" style={{ width: size, height: size + (label ? 26 : 0) }}>
+    <div className="ys-circular-progress" style={{ width: size, height: size + (label ? 26 : 0) }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={size / 2}
@@ -59,7 +60,7 @@ function CircularProgress({
         </text>
       </svg>
       {label && (
-        <div className="mt-1 text-[.85rem] text-cyan-200 font-semibold">{label}</div>
+        <div className="ys-circular-progress-label">{label}</div>
       )}
     </div>
   );
