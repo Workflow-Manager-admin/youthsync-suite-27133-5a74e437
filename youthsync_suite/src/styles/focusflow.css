@@ -1,12 +1,12 @@
 :root {
-  --ff-accent: #38bdf8;
-  --ff-timer-bg: #181f2b;
-  --ff-card-bg: #22232a;
-  --ff-card-glow: 0 8px 36px 4px #38bdf844, 0 2px 16px #7fd0ff1a;
-  --ff-timer-indicator: #b773f7;
-  --ff-complete-glow: 0 0 12px 3px #38bdf87c, 0 1px 8px #b773f766;
-  --ff-action-focus: 0 0 0 3px #38bdf87c;
-  --ff-action-focus-danger: 0 0 0 3px #ff468083;
+  --ff-accent: var(--accent, #38bdf8);
+  --ff-timer-bg: var(--focusflow-bg, #181f2b);
+  --ff-card-bg: var(--card-bg, #22232a);
+  --ff-card-glow: var(--box-shadow-card-focusflow, 0 8px 36px 4px #38bdf844, 0 2px 16px #7fd0ff1a);
+  --ff-timer-indicator: var(--accent-purple, #b773f7);
+  --ff-complete-glow: var(--complete-glow, 0 0 12px 3px #38bdf87c, 0 1px 8px #b773f766);
+  --ff-action-focus: var(--focus-accent, 0 0 0 3px #38bdf87c);
+  --ff-action-focus-danger: var(--focus-danger, 0 0 0 3px #ff468083);
 }
 
 /* Root page structure */
