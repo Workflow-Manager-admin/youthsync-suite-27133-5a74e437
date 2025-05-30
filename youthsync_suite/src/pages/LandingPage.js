@@ -91,33 +91,38 @@ const LandingPage = () => {
   );
 };
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Renders an icon card where the glow and scale animation trigger
+ * only when hovering/focusing the icon itself (not the button/card).
+ */
 function IconCircleCard({ icon, accent, title, description, onClick }) {
-  // Animate scale/glow on hover
+  // Glow and scale only when hovering icon
   return (
     <button
       className={
         `relative flex flex-col gap-1 items-center justify-center px-3 py-3
-        group hover:z-10 focus:z-10 transition-[box-shadow,transform] duration-200
-        rounded-full outline-none`
+        ys-landing-cardbtn
+        outline-none border-none bg-none`
       }
-      style={{ background: "none", border: "none" }}
       aria-label={`Go to ${title}`}
       tabIndex={0}
       onClick={onClick}
       onKeyDown={e => (e.key === "Enter" ? onClick() : undefined)}
+      type="button"
     >
       <span
         className={`
+          icon-circle
           flex items-center justify-center
           rounded-full
           w-32 h-32 md:w-40 md:h-40
-          shadow-[0_0_26px_10px_#38bdf888,0_2px_42px_6px_#222a]
-          transition-transform duration-200
+          transition-transform
+          duration-200
           bg-gradient-to-br ${accent}
           border-4 border-[#18181b]/70
-          group-hover:scale-110 group-hover:shadow-[0_0_36px_20px_#38bdf8cc,0_8px_62px_12px_#2323]
-          `}
+        `}
+        tabIndex={-1}
       >
         {icon}
       </span>
