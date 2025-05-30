@@ -61,17 +61,17 @@ const LandingPage = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] select-none">
-      <div className="mb-2 text-[#38bdf8] font-medium tracking-wider text-base md:text-lg">
+    <div className="ys-landing-root select-none">
+      <div className="ys-landing-subtitle">
         Productivity Tools for Young Minds
       </div>
-      <h1 className="font-extrabold tracking-tight text-3xl md:text-5xl mb-2 bg-gradient-to-r from-white to-blue-300 text-transparent bg-clip-text">
+      <h1 className="ys-landing-title">
         YouthSync Suite
       </h1>
-      <p className="opacity-80 mb-12 text-base md:text-lg max-w-[420px] mx-auto text-center">
+      <p className="ys-landing-desc">
         A modern, all-in-one student toolkit – CGPA calculator, bill splitter, and Pomodoro timer!
       </p>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 w-full mb-12">
+      <div className="ys-landing-icons-row">
         {toolCards.map((tool, idx) => (
           <IconCircleCard
             key={tool.title}
@@ -83,7 +83,7 @@ const LandingPage = () => {
           />
         ))}
       </div>
-      <div className="text-center text-xs opacity-60 font-mono mt-8">
+      <div className="ys-landing-footer">
         Crafted using React, React Router, TailwindCSS · {new Date().getFullYear()}
       </div>
     </div>
