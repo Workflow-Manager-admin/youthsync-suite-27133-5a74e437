@@ -6,13 +6,13 @@
 }
 
 .ys-circular-progress-label {
-  margin-top: 2px;
+  margin-top: 0.12rem;
   color: var(--accent-teal, #7ee9fa);
-  font-size: .93rem;
+  font-size: 0.93rem;
   font-weight: 600;
-  text-shadow: 0 0 3px var(--accent)33, 0 1px 4px var(--accent)66;
+  text-shadow: 0 0 0.19rem var(--accent)33, 0 0.0625rem 0.25rem var(--accent)66;
 }
 
 .ys-circular-progress svg circle:nth-child(2) {
-  filter: drop-shadow(var(--progress-shadow, 0 0 8px #38bdf886));
+  filter: drop-shadow(var(--progress-shadow, 0 0 0.5rem #38bdf886));
 }
