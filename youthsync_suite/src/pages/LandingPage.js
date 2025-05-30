@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/LandingPage.css";
 
@@ -46,6 +46,11 @@ const toolDescriptions = {
 // PUBLIC_INTERFACE
 const LandingPage = () => {
   const navigate = useNavigate();
+
+  // Set document title for landing page
+  useEffect(() => {
+    document.title = "PVB - 1";
+  }, []);
 
   const toolCards = [
     {
