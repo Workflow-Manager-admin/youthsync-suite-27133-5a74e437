@@ -129,6 +129,7 @@
     0 0 0px 2px #38c7fa60,
     0 0 60px 14px #38bdf852;
   transform: scale(1.11);
+  cursor: pointer;
 }
 
 /* Remove all hover/focus effects on icon-circle when button (card) is hovered */
