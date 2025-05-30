@@ -98,10 +98,21 @@
   margin: 0;
 }
 
+/* Remove default big focus ring, use global focus-visible instead */
 .ys-landing-icons-row > button:focus,
 .ys-landing-cardbtn:focus {
-  outline: 10px solid #38bdf8;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Extra visible ring for card button when focused via keyboard */
+.ys-landing-icons-row > button:focus-visible,
+.ys-landing-cardbtn:focus-visible {
+  /* fallback, main handled in App.css */
+  outline: 2.5px solid var(--accent, #38bdf8);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px #38bdf8cc, 0 0 2.5rem 0.6rem #38bdf862;
+  z-index: 8;
 }
 
 @media (max-width: 500px) {
