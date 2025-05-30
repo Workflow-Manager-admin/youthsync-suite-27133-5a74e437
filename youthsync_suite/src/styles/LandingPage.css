@@ -148,11 +148,11 @@
 
 /* --- SplitMate: teal, blue, aqua, gradient, soft/greenish glow --- */
 .ys-landing-splitmate .icon-circle {
-  background: linear-gradient(145deg, #232938 60%, #4188cd 100%, #62e6ae 180%);
-  border-color: #62e6ae #38bdf8 #4188cd #232938;
+  background: var(--gradient-splitmate-icon, linear-gradient(145deg, #232938 60%, #4188cd 100%, #62e6ae 180%));
+  border-color: var(--accent-teal) var(--accent) #4188cd #232938;
 }
 .ys-landing-splitmate .icon-card-title {
-  color: #62e6ae;
+  color: var(--accent-teal);
   text-shadow: 0 3px 10px #62e6ae88, 0 2px 18px #36b8c280;
 }
 .ys-landing-splitmate .icon-card-desc {
@@ -162,10 +162,7 @@
 .ys-landing-splitmate .icon-circle:focus {
   /* Glow: teal-green */
   filter: drop-shadow(0 0 40px #62e6ae99) drop-shadow(0 0 18px #38bdf880);
-  box-shadow:
-    0 0 54px 10px #62e6ae84,
-    0 0 0px 3px #7ae6a460,
-    0 0 62px 14px #53e69072;
+  box-shadow: var(--glow-splitmate, 0 0 54px 10px #62e6ae84,0 0 0px 3px #7ae6a460,0 0 62px 14px #53e69072);
   outline: 0;
 }
 
