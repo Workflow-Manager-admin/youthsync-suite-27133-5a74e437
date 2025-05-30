@@ -131,14 +131,16 @@
 }
 .focusflow-timer-indicator.active {
   border-color: var(--ff-timer-indicator);
-  box-shadow: 0 0 32px 3px #b773f799, 0 0 4px #38bdf857;
+  /* Remove purple full-opacity effect; use accent/brand style with subtle magenta tint at lower opacity */
+  box-shadow: 0 0 32px 3px #38bdf866, 0 0 10px 2px #b773f752, 0 0 4px #38bdf847;
   opacity: .95;
   animation: ff-timer-pulse 1.3s cubic-bezier(.4,1.1,.25,.97) infinite;
 }
 @keyframes ff-timer-pulse {
-  0%   { box-shadow: 0 0 21px 5px #b773f741, 0 0 4px #38bdf857;}
-  70%  { box-shadow: 0 0 54px 13px #b773f792, 0 0 10px #38bdf86a;}
-  100% { box-shadow: 0 0 24px 6px #b773f752, 0 0 4px #38bdf857;}
+  /* Animate with stronger accent + subtle magenta, no full purple circles */
+  0%   { box-shadow: 0 0 19px 4px #38bdf84e, 0 0 7px 2px #b773f74a;}
+  70%  { box-shadow: 0 0 40px 13px #38bdf887, 0 0 14px 3px #b773f770;}
+  100% { box-shadow: 0 0 20px 5px #38bdf853, 0 0 6px 1.5px #b773f752;}
 }
 
 /* Controls and settings column */
