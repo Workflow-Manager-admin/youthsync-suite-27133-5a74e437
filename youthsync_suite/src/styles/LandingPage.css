@@ -9,7 +9,7 @@
 
 .ys-landing-subtitle {
   margin-bottom: 4px;
-  color: #38bdf8;
+  color: var(--accent);
   font-family: inherit;
   font-weight: 500;
   letter-spacing: 0.03em;
