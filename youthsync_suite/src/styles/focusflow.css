@@ -254,9 +254,29 @@
   opacity: 0.86;
 }
 .focusflow-btn:focus-visible {
-  box-shadow: var(--ff-action-focus);
-  outline: 0;
+  outline: 2.2px solid var(--ff-accent, #38bdf8);
+  outline-offset: 2px;
+  box-shadow: var(--ff-action-focus), 0 0 1.8rem #38bdf870;
   z-index: 2;
+}
+
+/* Input field focus for time */
+.focusflow-time-input:focus-visible {
+  outline: 2.2px solid var(--ff-accent, #38bdf8);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--ff-accent, #38bdf8), 0 0 0.7rem #38bdf85a;
+  z-index: 2;
+}
+
+/* Major card focus visible, extra accent for accessibility */
+.focusflow-card:focus-visible {
+  outline: 2.5px solid var(--ff-accent, #38bdf8);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 5px var(--ff-accent, #38bdf8),
+    0 0 2.5rem 0.5rem #38bdf862,
+    var(--ff-card-glow, 0 8px 36px 4px #38bdf844, 0 2px 16px #7fd0ff1a);
+  z-index: 8;
 }
 .focusflow-btn:hover {
   background: #5ad9fc;
