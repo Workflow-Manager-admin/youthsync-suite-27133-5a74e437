@@ -1,37 +1,40 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import LandingPage from "./pages/LandingPage";
+import GradeBoostPage from "./pages/GradeBoostPage";
+import SplitMatePage from "./pages/SplitMatePage";
+import FocusFlowPage from "./pages/FocusFlowPage";
 
-function App() {
+/**
+ * App root component - provides layout, navbar, and routing.
+ */
+const App = () => {
+  // For style: give body correct background always.
+  React.useEffect(() => {
+    document.body.classList.add("bg-[#18181b]", "text-white");
+    return () => {
+      document.body.classList.remove("bg-[#18181b]", "text-white");
+    };
+  }, []);
+  const location = useLocation();
+
   return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <div className="logo">
-              <span className="logo-symbol">*</span> KAVIA AI
-            </div>
-            <button className="btn">Template Button</button>
-          </div>
-        </div>
-      </nav>
-
-      <main>
-        <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            
-            <h1 className="title">youthsync_suite</h1>
-            
-            <div className="description">
-              Start building your application.
-            </div>
-            
-            <button className="btn btn-large">Button</button>
-          </div>
-        </div>
+    <div className="min-h-screen flex flex-col bg-[#18181b]">
+      <Navbar />
+      <main className="flex-1 pt-20 md:pt-24">
+        <Routes location={location}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/gradeboost" element={<GradeBoostPage />} />
+          <Route path="/splitmate" element={<SplitMatePage />} />
+          <Route path="/focusflow" element={<FocusFlowPage />} />
+        </Routes>
       </main>
+      <footer className="py-4 text-center text-xs text-gray-500 bg-[#18181b] select-none border-t border-[#222]">
+        &copy; {new Date().getFullYear()} YouthSync Suite &mdash; made for students
+      </footer>
     </div>
   );
-}
+};
 
 export default App;
