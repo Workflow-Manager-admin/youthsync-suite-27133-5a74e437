@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/splitmate.css";
 
 /**
  * SplitMate Page: Bill splitter with default & custom names/shares

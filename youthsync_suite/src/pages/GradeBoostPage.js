@@ -99,26 +99,24 @@ function GradeBoostPage() {
   }
 
   return (
-    <div className="flex flex-col items-center px-2 py-7">
-      <div className="max-w-xl w-full bg-[#22232a] rounded-xl shadow-xl p-5 md:p-8 mt-3">
-        <div className="mb-5 flex items-center gap-2">
-          <span className="rounded-full bg-[#38bdf8] w-6 h-6 flex items-center justify-center shadow-[0_0_10px_#38bdf8] font-bold text-lg text-[#18181b]">G</span>
-          <span className="font-extrabold text-2xl bg-gradient-to-r from-[#38bdf8] to-blue-100 text-transparent bg-clip-text">GradeBoost</span>
+    <div className="gradeboost-root">
+      <div className="gradeboost-card">
+        <div className="gradeboost-header">
+          <span className="gradeboost-circle">G</span>
+          <span className="gradeboost-title">GradeBoost</span>
         </div>
-        <p className="opacity-75 text-sm mb-3">
-          CGPA calculator: Enter grades & credits.
-        </p>
+        <p className="gradeboost-desc">CGPA calculator: Enter grades & credits.</p>
         <form
           onSubmit={e => {
             e.preventDefault();
             calculate();
           }}
         >
-          <div className="flex flex-col gap-3 mb-4">
+          <div className="gradeboost-form-row">
             {subjects.map((subject, idx) => (
               <div
                 key={idx}
-                className="flex flex-row gap-2 items-center bg-[#27272a]/60 px-2 py-2 rounded-md"
+                className="gradeboost-subject-row"
               >
                 <select
                   value={subject.grade}
@@ -126,7 +124,7 @@ function GradeBoostPage() {
                   onChange={e =>
                     handleSubjectChange(idx, "grade", e.target.value)
                   }
-                  className="bg-[#0f172a] border border-[#222] text-white rounded px-2 py-[2px] outline-none focus:ring-2 focus:ring-cyan-400/60"
+                  className="gradeboost-select"
                   aria-label="Select grade"
                 >
                   <option value="">Grade</option>
@@ -144,13 +142,13 @@ function GradeBoostPage() {
                   value={subject.credit}
                   required
                   onChange={e => handleSubjectChange(idx, "credit", e.target.value)}
-                  className="w-20 bg-[#0f172a] border border-[#222] text-white rounded px-2 py-[2px] outline-none focus:ring-2 focus:ring-cyan-400/60"
+                  className="gradeboost-input gradeboost-credit-input"
                   aria-label="Enter credits"
                 />
                 {subjects.length > 1 && (
                   <button
                     type="button"
-                    className="ml-1 px-1 py-1 text-base text-red-400 hover:bg-red-500/20 rounded-full transition"
+                    className="gradeboost-remove-btn"
                     onClick={() => removeSubject(idx)}
                     aria-label="Remove subject"
                   >
@@ -160,33 +158,33 @@ function GradeBoostPage() {
               </div>
             ))}
           </div>
-          <div className="flex gap-2 mb-5">
+          <div className="gradeboost-actions">
             <button
               type="button"
               onClick={addSubject}
-              className="rounded-md px-3 py-2 bg-[#38bdf8] hover:bg-cyan-400 text-[#18181b] font-semibold transition shadow-lg text-sm"
+              className="gradeboost-btn gradeboost-add-btn"
             >
               + Add Subject
             </button>
             <button
               type="submit"
-              className="rounded-md px-4 py-2 bg-gradient-to-br from-[#38bdf8] to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-[#18181b] font-bold shadow-lg text-sm transition"
+              className="gradeboost-btn gradeboost-btn-calc"
             >
               Calculate GPA
             </button>
             <button
               type="button"
               onClick={resetAll}
-              className="rounded-md px-3 py-2 bg-[#222] text-gray-200 hover:bg-[#333] font-medium transition text-sm"
+              className="gradeboost-btn gradeboost-btn-reset"
             >
               Reset
             </button>
           </div>
         </form>
-        {error && <div className="mb-3 rounded p-2 bg-red-500/20 text-red-300 text-xs">{error}</div>}
+        {error && <div className="gradeboost-error">{error}</div>}
         {showSummary && result && (
-          <div className="flex flex-col md:flex-row gap-6 items-center bg-[#232a38]/80 p-5 mt-2 rounded-lg shadow-xl transition animate-in fade-in slide-in-from-top-8">
-            <div className="flex flex-col items-center">
+          <div className="gradeboost-result-row">
+            <div>
               <CircularProgress
                 value={result.gpa}
                 max={10}
@@ -196,16 +194,12 @@ function GradeBoostPage() {
                 label="GPA"
               />
             </div>
-            <div className="font-semibold flex flex-col items-center gap-1">
-              <div>
-                <span className="text-lg text-cyan-300 font-bold">{result.gpa}</span> GPA
+            <div>
+              <div className="gradeboost-result-gpa">
+                {result.gpa} GPA
               </div>
-              <div className="text-xs text-blue-200">
-                {performanceSummary(result.gpa)}
-              </div>
-              <div className="opacity-70 text-xs mt-1">
-                Total Credits: <span>{result.credits}</span>
-              </div>
+              <div className="gradeboost-result-summary">{performanceSummary(result.gpa)}</div>
+              <div className="gradeboost-result-credits">Total Credits: <span>{result.credits}</span></div>
             </div>
           </div>
         )}
