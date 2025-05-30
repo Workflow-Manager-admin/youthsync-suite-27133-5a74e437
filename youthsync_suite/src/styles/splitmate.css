@@ -1,0 +1,193 @@
+.splitmate-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0.5rem 3.5rem 0.5rem;
+  min-height: 78vh;
+  background: none;
+}
+.splitmate-card {
+  max-width: 540px;
+  width: 100%;
+  background: #22232a;
+  border-radius: 1rem;
+  box-shadow: 0 8px 36px 4px #62e6ae34, 0 1.5px 4px #38bdf822;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-top: 1.2rem;
+  position: relative;
+}
+.splitmate-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.3rem;
+}
+.splitmate-circle {
+  background: linear-gradient(120deg,#62e6ae 80%,#232938 110%);
+  color: #18181b;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 100%;
+  width: 2rem; height: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 18px 6px #62e6ae50;
+}
+.splitmate-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  background: linear-gradient(104deg, #62e6ae 65%, #4188cd 140%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.splitmate-desc {
+  color: #7ee6c7;
+  opacity: 0.88;
+  font-size: 1.04rem;
+  margin-bottom: 0.7rem;
+}
+.splitmate-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.15rem;
+}
+.splitmate-top-inputs {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.splitmate-amount-input,
+.splitmate-num-input {
+  background: #0f172a;
+  border: 1.3px solid #222;
+  color: #62e6ae;
+  border-radius: 5px;
+  padding: 0.26rem 0.72rem;
+  font-size: 1.06rem;
+  outline: none;
+  transition: border-color 0.13s;
+}
+.splitmate-amount-input:focus,
+.splitmate-num-input:focus {
+  border-color: #62e6ae;
+  box-shadow: 0 0 0 2px #62e6ae42;
+}
+.splitmate-reset-btn {
+  background: #232938;
+  color: #7ee6c7;
+  border: none;
+  border-radius: 5px;
+  padding: 0.27rem 0.98rem;
+  font-size: 0.93rem;
+  margin-left: 0.25rem;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+.splitmate-reset-btn:hover {
+  background: #23242e;
+}
+.splitmate-toggle-row {
+  display: flex;
+  gap: 0.95rem;
+  align-items: center;
+  font-size: 1.02rem;
+  margin-top: 0.15em;
+}
+.splitmate-custom-toggle {
+  accent-color: #62e6ae;
+  transform: scale(1.14);
+}
+.splitmate-share-row {
+  display: grid;
+  grid-template-columns: 4fr 4fr 2fr;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.34rem 0;
+  border: none;
+}
+.splitmate-name-input, .splitmate-share-input {
+  background: #10141b;
+  border: 1.2px solid #232;
+  color: #62e6ae;
+  border-radius: 4px;
+  padding: 0.21rem 0.46rem;
+  font-size: 1rem;
+}
+.splitmate-name-input:focus, .splitmate-share-input:focus {
+  border-color: #62e6ae;
+  box-shadow: 0 0 0 2px #62e6ae2a;
+}
+.splitmate-equal-input[disabled] {
+  background: #10141b;
+  opacity: 0.36;
+}
+.splitmate-card-divider {
+  border-bottom: 1px solid #223;
+  margin-bottom: 0.59em;
+}
+.splitmate-btn-submit {
+  margin-top: 0.52em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  color: #18181b;
+  background: linear-gradient(102deg, #38bdf8 68%, #62e6ae 140%);
+  box-shadow: 0 0 16px #62e6ae39;
+  padding: 0.7em 1.39em;
+  transition: background .2s, color .11s, box-shadow .20s;
+}
+.splitmate-btn-submit:hover {
+  background: linear-gradient(102deg, #62e6ae 68%, #38bdf8 140%);
+  color: #165954;
+}
+.splitmate-error {
+  background: #ff468029;
+  color: #ff4680;
+  font-size: 0.97rem;
+  border-radius: 5px;
+  padding: 0.6rem;
+  margin: 0.8rem 0 0.7rem;
+}
+.splitmate-results-row {
+  margin-top: 2.1em;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: splitmate-fade-in 0.7s cubic-bezier(.53,1.1,.38,1) both;
+}
+@keyframes splitmate-fade-in {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; transform: none;}
+}
+.splitmate-person-card {
+  background: #1b2532;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px 0 #62e6ae22, 0 1.5px 2px #38bdf811;
+  min-width: 120px;
+  padding: 1em 1.05em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.02rem;
+}
+.splitmate-person-name {
+  color: #62e6ae;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.splitmate-person-amount {
+  color: #38bdf8;
+  font-weight: 800;
+  font-size: 1.27rem;
+  margin: 0.28em 0 0.1em 0;
+}
+.splitmate-person-type {
+  color: #65cdf7;
+  font-size: 0.85rem;
+  opacity: 0.84;
+}
