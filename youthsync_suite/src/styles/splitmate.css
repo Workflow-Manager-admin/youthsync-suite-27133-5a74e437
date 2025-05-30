@@ -204,13 +204,13 @@
 .splitmate-btn-submit {
   margin-top: 0.65em;
   border: none;
-  border-radius: 12px;
+  border-radius: 0.75rem; /* 12px */
   font-size: 1.18rem;
   font-weight: 800;
   letter-spacing: .02em;
   color: #18181b;
   background: linear-gradient(101deg, #38bdf8 61%, #65ecd7 115%);
-  box-shadow: 0 0 18px #62e6ae49, 0 7px 28px #62e6ae13;
+  box-shadow: 0 0 1.125rem #62e6ae49, 0 0.4375rem 1.75rem #62e6ae13;
   padding: 0.93em 1.7em;
   transition: background .19s, color .13s, box-shadow .21s, transform .12s;
   outline: none;
@@ -224,8 +224,8 @@
 .splitmate-btn-submit:focus {
   background: linear-gradient(101deg, #62e6ae 64%, #38bdf8 115%);
   color: #21594c;
-  box-shadow: 0 0 28px #62e6ae5e, 0 7px 20px #38bdf815;
-  outline: 2px solid #38bdf8c2;
+  box-shadow: 0 0 1.75rem #62e6ae5e, 0 0.4375rem 1.25rem #38bdf815;
+  outline: 0.125rem solid #38bdf8c2;
 }
 
 .splitmate-error {
