@@ -96,6 +96,7 @@
   align-items: stretch;
   background: #23242aee;
   padding: 0.44rem 0.59rem 0.44rem 0.43rem;
+  /* All layout and spacing use rem units. */
   border-radius: 0.7rem;
   box-shadow: none;
   border: 1.3px solid transparent;
