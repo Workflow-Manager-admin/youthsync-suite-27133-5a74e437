@@ -124,12 +124,12 @@
 
 /* --------- Distinct Icon Background & Glow per Tool --------- */
 .ys-landing-gradeboost .icon-circle {
-  background: linear-gradient(135deg, #263042 70%, #20c9b6 140%);
-  border-color: #21e1c1 #38bdf8 #38bdf8 #263042;
-  box-shadow: 0 2px 28px 0 #29f3d620;
+  background: var(--gradient-gradeboost-icon, linear-gradient(135deg, #263042 70%, #20c9b6 140%));
+  border-color: var(--accent-turquoise-dark) var(--accent) var(--accent) #263042;
+  box-shadow: var(--glow-gradeboost, 0 2px 28px 0 #29f3d620);
 }
 .ys-landing-gradeboost .icon-card-title {
-  color: #21e1c1;
+  color: var(--accent-turquoise-dark);
   text-shadow: 0 3px 10px #21e1c160, 0 2px 18px #38bdf822;
 }
 .ys-landing-gradeboost .icon-card-desc {
