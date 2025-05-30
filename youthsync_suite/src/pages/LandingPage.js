@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/LandingPage.css";
 
 // Icon SVGs for glowing effect
 const icons = {
@@ -120,8 +121,8 @@ function IconCircleCard({ icon, accent, title, description, onClick }) {
       >
         {icon}
       </span>
-      <div className="mt-3 text-lg font-bold tracking-wide text-white drop-shadow-lg">{title}</div>
-      <div className="max-w-[170px] text-xs opacity-70 text-blue-100 text-center">{description}</div>
+      <div className="icon-card-title">{title}</div>
+      <div className="icon-card-desc">{description}</div>
     </button>
   );
 }

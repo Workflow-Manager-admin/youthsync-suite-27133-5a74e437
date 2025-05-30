@@ -1,0 +1,137 @@
+.ys-landing-root {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.ys-landing-subtitle {
+  margin-bottom: 4px;
+  color: #38bdf8;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 1rem;
+}
+@media (min-width: 600px) {
+  .ys-landing-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.ys-landing-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-align: center;
+  letter-spacing: -.01em;
+  background: linear-gradient(90deg, #fff 20%, #c3e4fc 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (min-width: 768px) {
+  .ys-landing-title {
+    font-size: 3rem;
+  }
+}
+
+.ys-landing-desc {
+  opacity: 0.8;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+  max-width: 420px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .ys-landing-desc {
+    font-size: 1.19rem;
+  }
+}
+
+.ys-landing-icons-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 57px;
+  flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+  .ys-landing-icons-row {
+    gap: 1.8rem;
+  }
+}
+@media (max-width: 680px) {
+  .ys-landing-icons-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+    margin-bottom: 38px;
+  }
+}
+
+.ys-landing-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.62;
+  font-family: 'Fira Mono', 'Menlo', 'monospace', monospace;
+  margin-top: 38px;
+  color: #b6d5f7;
+}
+
+/* Glow and icon card enhancements for landing page */
+.ys-landing-icons-row > button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ys-landing-icons-row > button:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Allow circle card to use full width on mobile and keep a nice minimum gap */
+@media (max-width: 500px) {
+  .ys-landing-icons-row > button {
+    min-width: 220px;
+    width: 100%;
+  }
+}
+
+/* Optionally: refine the circular glow if needed for visual pop */
+.ys-landing-icons-row > button span {
+  filter: drop-shadow(0 0 20px #38bdf899);
+  transition: box-shadow 0.21s, transform 0.2s;
+}
+.ys-landing-icons-row > button:hover span,
+.ys-landing-icons-row > button:focus span {
+  filter: drop-shadow(0 0 36px #38bdf8cc);
+  transform: scale(1.07);
+}
+
+/* Titles in icon cards for emphasis on mobile */
+.ys-landing-icons-row > button > .icon-card-title {
+  font-size: 1.06rem;
+  font-weight: bold;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.ys-landing-icons-row > button > .icon-card-desc {
+  max-width: 168px;
+  color: #7ed3fc;
+  opacity: 0.77;
+  text-align: center;
+  font-size: 0.98rem;
+}
