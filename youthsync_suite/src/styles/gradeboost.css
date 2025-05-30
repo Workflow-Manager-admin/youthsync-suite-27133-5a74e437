@@ -48,12 +48,12 @@
   font-weight: bold;
   font-size: 1.3rem;
   border-radius: 100%;
-  width: 2.05rem;
+  width: 2.05rem; /* ~32.8px as rem */
   height: 2.05rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 17px 7px #21e1c1d2, 0 0 0px #29f3d670;
+  box-shadow: 0 0 17px 7px #21e1c1d2, 0 0 0px #29f3d670; /* box-shadow in px, OK */
   letter-spacing: 0.01em;
 }
 
