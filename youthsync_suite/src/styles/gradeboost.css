@@ -20,10 +20,11 @@
   flex-direction: column;
   align-items: center;
   padding: 2.2rem 0.6rem 3.5rem 0.6rem;
+  /* Already using rem for all paddings here, OK */
   min-height: 77vh;
 }
 .gradeboost-card {
-  max-width: 500px;
+  max-width: 31.25rem; /* 500px -> 31.25rem */
   width: 100%;
   background: var(--gb-bg);
   border-radius: 1.15rem;
