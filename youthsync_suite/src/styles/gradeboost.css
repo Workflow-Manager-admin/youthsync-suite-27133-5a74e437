@@ -1,16 +1,16 @@
 :root {
-  --gb-bg: #22232a;
-  --gb-accent: #20eedc;
-  --gb-accent2: #38bdf8;
-  --gb-accent-gradient: linear-gradient(110deg, #21e1c1 70%, #38bdf8 130%);
-  --gb-err: #ff4680;
-  --gb-err-bg: #ff468018;
-  --gb-err-dark: #fa2360;
+  --gb-bg: var(--gradeboost-bg, #22232a);
+  --gb-accent: var(--accent-turquoise, #20eedc);
+  --gb-accent2: var(--accent, #38bdf8);
+  --gb-accent-gradient: var(--gradient-gradeboost-card, linear-gradient(110deg, #21e1c1 70%, #38bdf8 130%));
+  --gb-err: var(--danger, #ff4680);
+  --gb-err-bg: var(--danger-bg, #ff468018);
+  --gb-err-dark: var(--danger-dark, #fa2360);
   --gb-txt: #ededed;
-  --gb-muted: #b6d5f7;
+  --gb-muted: var(--text-secondary, #b6d5f7);
   --gb-field-bg: #141723;
   --gb-border: #273042;
-  --gb-shadow: 0 8px 38px 8px #1be4e53a, 0 1.5px 4px #38bdf811;
+  --gb-shadow: var(--box-shadow-card, 0 8px 38px 8px #1be4e53a, 0 1.5px 4px #38bdf811);
   --gb-shadow-result: 0 5px 36px 0 #20eedc13, 0 0px 3px #21e1c140;
   --gb-btn-shadow: 0 2px 9px #20eedc2d;
 }

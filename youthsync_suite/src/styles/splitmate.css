@@ -1,11 +1,11 @@
 :root {
-  --splitmate-accent: #62e6ae;
-  --splitmate-blue: #38bdf8;
-  --splitmate-card: #22232a;
-  --splitmate-bg: #162028;
+  --splitmate-accent: var(--accent-teal, #62e6ae);
+  --splitmate-blue: var(--accent, #38bdf8);
+  --splitmate-card: var(--card-bg, #22232a);
+  --splitmate-bg: var(--splitmate-bg, #162028);
   --splitmate-card2: #192230;
   --splitmate-result-bg: #1f2732;
-  --splitmate-error: #ff4680;
+  --splitmate-error: var(--danger, #ff4680);
 }
 
 .splitmate-root {
