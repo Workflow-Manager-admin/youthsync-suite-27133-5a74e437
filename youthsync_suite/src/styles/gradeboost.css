@@ -295,7 +295,7 @@
   font-weight: 500;
   letter-spacing: 0.01em;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
   .gb-result-row {
     flex-direction: column;
     gap: 0.8rem;
