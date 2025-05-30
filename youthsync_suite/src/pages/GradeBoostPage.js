@@ -107,16 +107,19 @@ function GradeBoostPage() {
         </div>
         <p className="gradeboost-desc">CGPA calculator: Enter grades & credits.</p>
         <form
+          className="gb-form"
+          autoComplete="off"
           onSubmit={e => {
             e.preventDefault();
             calculate();
           }}
         >
-          <div className="gradeboost-form-row">
+          <div className="gb-form-row" role="list">
             {subjects.map((subject, idx) => (
               <div
                 key={idx}
-                className="gradeboost-subject-row"
+                className="gb-subject-row"
+                role="listitem"
               >
                 <select
                   value={subject.grade}
@@ -124,14 +127,12 @@ function GradeBoostPage() {
                   onChange={e =>
                     handleSubjectChange(idx, "grade", e.target.value)
                   }
-                  className="gradeboost-select"
+                  className="gb-select"
                   aria-label="Select grade"
                 >
                   <option value="">Grade</option>
                   {GRADES.map(g => (
-                    <option value={g.label} key={g.label}>
-                      {g.label}
-                    </option>
+                    <option value={g.label} key={g.label}>{g.label}</option>
                   ))}
                 </select>
                 <input
@@ -142,64 +143,74 @@ function GradeBoostPage() {
                   value={subject.credit}
                   required
                   onChange={e => handleSubjectChange(idx, "credit", e.target.value)}
-                  className="gradeboost-input gradeboost-credit-input"
+                  className="gb-input gb-credit-input"
                   aria-label="Enter credits"
+                  inputMode="numeric"
                 />
                 {subjects.length > 1 && (
                   <button
                     type="button"
-                    className="gradeboost-remove-btn"
+                    className="gb-remove-btn"
                     onClick={() => removeSubject(idx)}
                     aria-label="Remove subject"
+                    tabIndex={0}
                   >
-                    &times;
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 )}
               </div>
             ))}
           </div>
-          <div className="gradeboost-actions">
+          <div className="gb-actions">
             <button
               type="button"
               onClick={addSubject}
-              className="gradeboost-btn gradeboost-add-btn"
+              className="gb-btn gb-add-btn"
+              tabIndex={0}
             >
               + Add Subject
             </button>
             <button
               type="submit"
-              className="gradeboost-btn gradeboost-btn-calc"
+              className="gb-btn gb-btn-calc"
+              tabIndex={0}
             >
               Calculate GPA
             </button>
             <button
               type="button"
               onClick={resetAll}
-              className="gradeboost-btn gradeboost-btn-reset"
+              className="gb-btn gb-btn-reset"
+              tabIndex={0}
             >
               Reset
             </button>
           </div>
         </form>
-        {error && <div className="gradeboost-error">{error}</div>}
+        {error && (
+          <div className="gb-feedback gb-feedback-error" role="alert">
+            <span className="gb-feedback-icon" aria-hidden="true">!</span>
+            <span>{error}</span>
+          </div>
+        )}
         {showSummary && result && (
-          <div className="gradeboost-result-row">
-            <div>
+          <div className="gb-result-row" role="region" aria-live="polite">
+            <div className="gb-result-circlebox">
               <CircularProgress
                 value={result.gpa}
                 max={10}
-                size={90}
+                size={92}
                 accent="#38bdf8"
                 text={`${result.gpa}`}
                 label="GPA"
               />
             </div>
-            <div>
-              <div className="gradeboost-result-gpa">
-                {result.gpa} GPA
+            <div className="gb-result-info">
+              <div className="gb-result-gpa">{result.gpa} GPA</div>
+              <div className="gb-result-summary">{performanceSummary(result.gpa)}</div>
+              <div className="gb-result-credits">
+                <span>Total Credits:</span> <span>{result.credits}</span>
               </div>
-              <div className="gradeboost-result-summary">{performanceSummary(result.gpa)}</div>
-              <div className="gradeboost-result-credits">Total Credits: <span>{result.credits}</span></div>
             </div>
           </div>
         )}
