@@ -91,17 +91,17 @@ function FocusFlowPage() {
 
   // Animate session increment
   return (
-    <div className="flex flex-col items-center px-2 py-7">
-      <div className="max-w-xl w-full bg-[#22232a] rounded-xl shadow-xl p-5 md:p-8 mt-3 relative overflow-visible">
-        <div className="mb-5 flex items-center gap-2">
-          <span className="rounded-full bg-[#38bdf8] w-6 h-6 flex items-center justify-center shadow-[0_0_10px_#38bdf8] font-bold text-lg text-[#18181b]">F</span>
-          <span className="font-extrabold text-2xl bg-gradient-to-r from-[#38bdf8] to-blue-100 text-transparent bg-clip-text">FocusFlow</span>
+    <div className="focusflow-root">
+      <div className="focusflow-card">
+        <div className="focusflow-header">
+          <span className="focusflow-circle">F</span>
+          <span className="focusflow-title">FocusFlow</span>
         </div>
-        <p className="opacity-75 text-sm mb-3">
+        <p className="focusflow-desc">
           Pomodoro timer: Stay sharp, take smart breaks!
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-3 md:justify-center">
-          <div>
+        <div className="focusflow-main-row">
+          <div className="focusflow-timer-col">
             <CircularProgress
               value={timeLeft}
               max={duration * 60}
@@ -111,8 +111,8 @@ function FocusFlowPage() {
               label="Time left"
             />
           </div>
-          <div className="flex flex-col gap-2 items-center w-full max-w-xs">
-            <div className="flex items-center gap-2 text-sm mt-2">
+          <div className="focusflow-side-col">
+            <div className="focusflow-input-row">
               <input
                 type="number"
                 value={input}
@@ -120,14 +120,14 @@ function FocusFlowPage() {
                 max={120}
                 onChange={handleChange}
                 onBlur={setCustom}
-                className="w-16 bg-[#10141b] border border-[#232] rounded px-2 py-[6px] text-white"
+                className="focusflow-time-input"
                 aria-label="Set minutes"
               />
               <span>min</span>
               <button
                 type="button"
                 onClick={setCustom}
-                className="px-2 py-1 bg-[#38bdf8] text-[#18181b] font-bold rounded hover:bg-cyan-400 text-xs ml-2"
+                className="focusflow-set-btn"
               >
                 Set
               </button>
@@ -140,30 +140,30 @@ function FocusFlowPage() {
                   setTimerOn(false);
                 }}
                 title="Reset to 25"
-                className="px-2 py-1 bg-[#222] text-blue-100 rounded ml-2 text-xs"
+                className="focusflow-quick-btn"
               >
                 25-min
               </button>
             </div>
-            <div className="flex gap-3 mt-4">
+            <div className="focusflow-actions">
               <button
                 type="button"
-                className={`rounded-md px-4 py-2 text-sm font-semibold transition shadow-lg ${timerOn ? "bg-red-400 text-[#18181b] hover:bg-red-500" : "bg-[#38bdf8] text-[#18181b] hover:bg-cyan-400"}`}
+                className={`focusflow-btn${timerOn ? " red" : ""}`}
                 onClick={startPause}
               >
-                {timerOn ? "Pause" : timeLeft === 0 ? "Start" : "Start"}
+                {timerOn ? "Pause" : "Start"}
               </button>
               <button
                 type="button"
                 onClick={reset}
-                className="rounded-md px-3 py-2 bg-[#222] text-gray-200 hover:bg-[#333] font-medium transition text-sm"
+                className="focusflow-btn"
               >
                 Reset
               </button>
             </div>
-            <div className="mt-3 text-xs text-blue-100 text-center">
+            <div className="focusflow-summary-row">
               Completed Pomodoros:{" "}
-              <span className="text-cyan-300 font-bold">{completed}</span>
+              <span className="focusflow-completed-count">{completed}</span>
               <div>{focusSummary(completed)}</div>
             </div>
           </div>
