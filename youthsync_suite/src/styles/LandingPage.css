@@ -88,7 +88,8 @@
 }
 
 /* Glow and icon card enhancements for landing page */
-.ys-landing-icons-row > button {
+.ys-landing-icons-row > button,
+.ys-landing-cardbtn {
   background: none;
   border: none;
   box-shadow: none;
@@ -96,22 +97,22 @@
   margin: 0;
 }
 
-.ys-landing-icons-row > button:focus {
+.ys-landing-icons-row > button:focus,
+.ys-landing-cardbtn:focus {
   outline: 10px solid #38bdf8;
   outline-offset: 2px;
 }
 
-/* Allow circle card to use full width on mobile and keep a nice minimum gap */
 @media (max-width: 500px) {
-  .ys-landing-icons-row > button {
+  .ys-landing-icons-row > button,
+  .ys-landing-cardbtn {
     min-width: 220px;
     width: 100%;
   }
 }
 
-/* Optionally: refine the circular glow if needed for visual pop */
-.ys-landing-icons-row > button span {
-  /* No initial glow; only on hover/focus */
+/* Icon hover glow: ONLY when hovering/focusing icon itself */
+.icon-circle {
   filter: none;
   box-shadow: 0 0 0px 0px #38bdf800;
   transition: 
@@ -119,17 +120,23 @@
     box-shadow 0.22s cubic-bezier(0.5,0.14,0.21,1),
     transform 0.2s;
 }
-.ys-landing-icons-row > button:hover span,
-.ys-landing-icons-row > button:focus span {
-  /* Softer, still vivid cyan glow (reduced spread and opacity for subtler effect) */
+.icon-circle:hover,
+.icon-circle:focus {
+  /* Real glow on hover/focus icon only */
   filter: drop-shadow(0 0 32px #38bdf8e0) drop-shadow(0 0 8px #7ed3fc80);
   box-shadow:
     0 0 36px 8px #38bdf8b8,
     0 0 0px 2px #38c7fa60,
     0 0 60px 14px #38bdf852;
-  /* If browser doesn't support multiple drop-shadows, fall back, but box-shadow is a backup */
   transform: scale(1.11);
 }
+
+/* Remove all hover/focus effects on icon-circle when button (card) is hovered */
+.ys-landing-cardbtn:hover .icon-circle,
+.ys-landing-cardbtn:focus .icon-circle {
+  /* no style: glow is handled by .icon-circle:hover only */
+}
+
 
 /* Titles in icon cards for emphasis on mobile */
 .ys-landing-icons-row > button > .icon-card-title {
