@@ -5,24 +5,25 @@ import LandingPage from "./pages/LandingPage";
 import GradeBoostPage from "./pages/GradeBoostPage";
 import SplitMatePage from "./pages/SplitMatePage";
 import FocusFlowPage from "./pages/FocusFlowPage";
+import "./styles/App.css"; // Vanilla CSS for app-level styling
 
 /**
  * App root component - provides layout, navbar, and routing.
  */
 const App = () => {
-  // For style: give body correct background always.
+  // Set dark theme body class just once; CSS handles further styling.
   React.useEffect(() => {
-    document.body.classList.add("bg-[#18181b]", "text-white");
+    document.body.classList.add("ys-dark");
     return () => {
-      document.body.classList.remove("bg-[#18181b]", "text-white");
+      document.body.classList.remove("ys-dark");
     };
   }, []);
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#18181b]">
+    <div className="ys-app">
       <Navbar />
-      <main className="flex-1 pt-20 md:pt-24">
+      <main className="ys-main">
         <Routes location={location}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/gradeboost" element={<GradeBoostPage />} />
@@ -30,7 +31,7 @@ const App = () => {
           <Route path="/focusflow" element={<FocusFlowPage />} />
         </Routes>
       </main>
-      <footer className="py-4 text-center text-xs text-gray-500 bg-[#18181b] select-none border-t border-[#222]">
+      <footer className="ys-footer">
         &copy; {new Date().getFullYear()} YouthSync Suite &mdash; made for students
       </footer>
     </div>
