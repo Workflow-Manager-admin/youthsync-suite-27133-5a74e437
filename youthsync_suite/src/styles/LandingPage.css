@@ -111,7 +111,8 @@
 
 /* Optionally: refine the circular glow if needed for visual pop */
 .ys-landing-icons-row > button span {
-  filter: drop-shadow(0 0 20px #38bdf899);
+  /* No initial glow; only on hover/focus */
+  filter: none;
   transition: 
     filter 0.36s cubic-bezier(0.43, 0.16, 0.29, 1.04), 
     box-shadow 0.21s,
