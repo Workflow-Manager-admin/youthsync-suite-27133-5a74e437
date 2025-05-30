@@ -102,6 +102,15 @@ body {
   background-color: #FF8B4D;
 }
 
+/* Fallback focus style for .btn (not covered elsewhere) */
+.btn:focus-visible,
+.btn-large:focus-visible {
+  outline: 2px solid var(--kavia-orange, #E87A41);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--kavia-orange, #E87A41), 0 0 8px #E87A4199;
+  z-index: 4;
+}
+
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
