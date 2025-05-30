@@ -96,13 +96,13 @@ function SplitMatePage() {
   }
 
   return (
-    <div className="flex flex-col items-center px-2 py-7">
-      <div className="max-w-xl w-full bg-[#22232a] rounded-xl shadow-xl p-5 md:p-8 mt-3">
-        <div className="mb-5 flex items-center gap-2">
-          <span className="rounded-full bg-[#38bdf8] w-6 h-6 flex items-center justify-center shadow-[0_0_10px_#38bdf8] font-bold text-lg text-[#18181b]">S</span>
-          <span className="font-extrabold text-2xl bg-gradient-to-r from-[#38bdf8] to-blue-100 text-transparent bg-clip-text">SplitMate</span>
+    <div className="splitmate-root">
+      <div className="splitmate-card">
+        <div className="splitmate-header">
+          <span className="splitmate-circle">S</span>
+          <span className="splitmate-title">SplitMate</span>
         </div>
-        <p className="opacity-75 text-sm mb-3">
+        <p className="splitmate-desc">
           Bill splitter: Choose equal or custom shares.
         </p>
         <form
@@ -111,8 +111,8 @@ function SplitMatePage() {
             split();
           }}
         >
-          <div className="flex flex-col gap-3 mb-4">
-            <div className="flex gap-3">
+          <div className="splitmate-form-row">
+            <div className="splitmate-top-inputs">
               <input
                 type="number"
                 placeholder="Total Amount"
@@ -120,7 +120,7 @@ function SplitMatePage() {
                 step="0.01"
                 value={amount}
                 onChange={e => setAmount(e.target.value)}
-                className="w-36 bg-[#0f172a] border border-[#222] text-white rounded px-2 py-[5px] outline-none focus:ring-2 focus:ring-cyan-400/60"
+                className="splitmate-amount-input"
                 required
               />
               <input
@@ -130,25 +130,25 @@ function SplitMatePage() {
                 max="15"
                 value={numPeople}
                 onChange={e => handleNumPeopleChange(e.target.value)}
-                className="w-20 bg-[#0f172a] border border-[#222] text-white rounded px-2 py-[5px] outline-none focus:ring-2 focus:ring-cyan-400/60"
+                className="splitmate-num-input"
                 required
               />
               <button
                 type="button"
                 title="Reset all names/shares"
-                className="rounded bg-[#222] px-3 py-1 ml-1 text-xs hover:bg-[#333] text-cyan-200"
+                className="splitmate-reset-btn"
                 onClick={resetAll}
               >
                 Reset
               </button>
             </div>
-            <div className="flex gap-2 items-center mt-2">
-              <label className="text-sm select-none inline-flex gap-2 cursor-pointer">
+            <div className="splitmate-toggle-row">
+              <label className="select-none inline-flex gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={useCustomShares}
                   onChange={e => setUseCustomShares(e.target.checked)}
-                  className="accent-[#38bdf8]"
+                  className="splitmate-custom-toggle"
                 />
                 Custom shares
               </label>
@@ -159,12 +159,11 @@ function SplitMatePage() {
             </div>
             {Array.from({ length: numPeople }).map((_, idx) => (
               <div
-                className="grid grid-cols-10 gap-2 py-1"
+                className="splitmate-share-row"
                 key={idx}
-                style={{ border: "none" }}
               >
                 <input
-                  className="col-span-4 bg-[#10141b] border border-[#232] rounded px-2 py-[5px] text-white"
+                  className="splitmate-name-input"
                   placeholder={`Name #${idx + 1}`}
                   value={names[idx] || ""}
                   onChange={e => handleChange(idx, "name", e.target.value)}
@@ -172,7 +171,7 @@ function SplitMatePage() {
                 {useCustomShares ? (
                   <input
                     type="number"
-                    className="col-span-4 bg-[#10141b] border border-[#232] rounded px-2 py-[5px] text-white"
+                    className="splitmate-share-input"
                     placeholder="% Share"
                     value={shares[idx] || ""}
                     onChange={e => handleChange(idx, "share", e.target.value)}
@@ -182,37 +181,35 @@ function SplitMatePage() {
                   />
                 ) : (
                   <input
-                    className="col-span-4 bg-[#10141b] border border-[#232] rounded px-2 py-[5px] text-white opacity-40"
+                    className="splitmate-equal-input"
                     placeholder="Equal share"
                     disabled
                   />
                 )}
-                <span className="col-span-2 self-center text-xs text-cyan-400">
+                <span className="self-center splitmate-person-type">
                   {useCustomShares && "%"}
                 </span>
               </div>
             ))}
           </div>
           <button
-            className="mt-2 rounded-md px-5 py-2 bg-gradient-to-br from-[#38bdf8] to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-[#18181b] font-bold shadow-lg text-sm transition"
+            className="splitmate-btn-submit"
             type="submit"
           >
             Split Bill
           </button>
         </form>
-        {error && <div className="mt-3 mb-2 rounded p-2 bg-red-500/20 text-red-300 text-xs">{error}</div>}
+        {error && <div className="splitmate-error">{error}</div>}
         {results && (
-          <div
-            className="animate-fade-in-down mt-6 flex flex-wrap gap-3 justify-center"
-          >
+          <div className="splitmate-results-row">
             {results.map((r, i) => (
               <div
                 key={i}
-                className="px-4 py-3 bg-[#1b2532] rounded-lg shadow-cyan-500/20 shadow-sm flex flex-col items-center min-w-[110px]"
+                className="splitmate-person-card"
               >
-                <div className="text-sm font-semibold text-cyan-200">{r.name}</div>
-                <div className="text-xl font-bold text-cyan-400 mt-1">₹{r.share.toFixed(2)}</div>
-                <div className="text-xs text-blue-200 mt-1">{useCustomShares ? "custom" : "equal"}</div>
+                <div className="splitmate-person-name">{r.name}</div>
+                <div className="splitmate-person-amount">₹{r.share.toFixed(2)}</div>
+                <div className="splitmate-person-type">{useCustomShares ? "custom" : "equal"}</div>
               </div>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import CircularProgress from "../components/CircularProgress";
+import "../styles/focusflow.css";
 
 /**
  * FocusFlow Page: Pomodoro timer with session count, custom duration
