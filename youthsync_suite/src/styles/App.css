@@ -73,9 +73,59 @@
   --complete-glow: 0 0 0.75rem 0.1875rem #38bdf87c,0 0.0625rem 0.5rem #b773f766;
 
   /* Focus rings */
-  --focus-accent: 0 0 0 0.1875rem #38bdf87c;
-  --focus-danger: 0 0 0 0.1875rem #ff468083;
+  --focus-accent: 0 0 0 2.5px var(--accent);
+  --focus-accent-outline: 2px solid var(--accent);
+  --focus-accent-boxshadow: 0 0 0 3px var(--accent);
 }
+
+/* GLOBAL :focus-visible styles for accessibility */
+button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible,
+[role="button"]:focus-visible {
+  outline: var(--focus-accent-outline, 2px solid var(--accent));
+  outline-offset: 2px;
+  box-shadow: var(--focus-accent, 0 0 0 2.5px var(--accent));
+  z-index: 3;
+}
+
+a:focus-visible,
+.ys-navbar-link:focus-visible {
+  outline: var(--focus-accent-outline, 2px solid var(--accent));
+  outline-offset: 2px;
+  box-shadow: var(--focus-accent, 0 0 0 2.5px var(--accent));
+  z-index: 3;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: var(--focus-accent-outline, 2px solid var(--accent));
+  outline-offset: 2px;
+  box-shadow: var(--focus-accent, 0 0 0 2.5px var(--accent));
+  z-index: 3;
+}
+
+/* Distinct focus-visible for major cards */
+.focusflow-card:focus-visible,
+.gradeboost-card:focus-visible,
+.splitmate-card:focus-visible,
+.ys-landing-cardbtn:focus-visible {
+  outline: var(--focus-accent-outline, 2.5px solid var(--accent));
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 4px var(--accent),
+    0 0 2.5rem 0.5rem var(--accent-dark),
+    var(--box-shadow-card, 0 0.5rem 2.375rem 0.5rem #1be4e53a);
+  z-index: 5;
+}
+
+.ys-landing-cardbtn:focus-visible .icon-circle {
+  filter: drop-shadow(0 0 5.5rem var(--accent));
+  box-shadow: 0 0 2.5rem 0.75rem var(--accent);
+}
+
 
 /* Use rem/em on structure for scalability */
 .ys-dark {
