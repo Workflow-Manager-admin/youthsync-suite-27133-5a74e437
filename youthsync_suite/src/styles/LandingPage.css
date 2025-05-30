@@ -97,7 +97,7 @@
 }
 
 .ys-landing-icons-row > button:focus {
-  outline: 2px solid #38bdf8;
+  outline: 10px solid #38bdf8;
   outline-offset: 2px;
 }
 
@@ -113,15 +113,22 @@
 .ys-landing-icons-row > button span {
   /* No initial glow; only on hover/focus */
   filter: none;
+  box-shadow: 0 0 0px 0px #38bdf800;
   transition: 
     filter 0.36s cubic-bezier(0.43, 0.16, 0.29, 1.04), 
-    box-shadow 0.21s,
+    box-shadow 0.22s cubic-bezier(0.5,0.14,0.21,1),
     transform 0.2s;
 }
 .ys-landing-icons-row > button:hover span,
 .ys-landing-icons-row > button:focus span {
-  filter: drop-shadow(0 0 36px #38bdf8cc);
-  transform: scale(1.07);
+  /* Stronger, more vibrant neon/cyan glow + added spread/opacity */
+  filter: drop-shadow(0 0 46px #38bdf8fc) drop-shadow(0 0 16px #7ed3fcbb);
+  box-shadow:
+    0 0 52px 16px #38bdf8e0,
+    0 0 0px 2px #38c7fa80,
+    0 0 90px 22px #38bdf876;
+  /* If browser doesn't support multiple drop-shadows, fall back, but now have box-shadow as backup */
+  transform: scale(1.11);
 }
 
 /* Titles in icon cards for emphasis on mobile */
