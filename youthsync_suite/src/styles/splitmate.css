@@ -17,16 +17,16 @@
   background: none;
 }
 .splitmate-card {
-  max-width: 520px;
+  max-width: 32.5rem; /* 520px */
   width: 100%;
   background: var(--splitmate-card2);
-  border-radius: 1.20rem;
-  box-shadow: 0 8px 36px 0 #62e6ae50, 0 1.5px 8px #38bdf822;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.5rem 2.25rem 0 #62e6ae50, 0 0.09375rem 0.5rem #38bdf822;
   padding: 2.05rem 1.4rem 1.7rem 1.4rem;
   margin-top: 1.4rem;
   position: relative;
   overflow: visible;
-  border: 1.3px solid #23293a;
+  border: 0.08125rem solid #23293a; /* 1.3px */
 }
 
 .splitmate-header {
