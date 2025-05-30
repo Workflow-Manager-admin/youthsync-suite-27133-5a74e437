@@ -339,7 +339,21 @@
 .splitmate-share-input:focus-visible,
 .splitmate-num-input:focus-visible,
 .splitmate-amount-input:focus-visible {
-  outline: 2.3px solid var(--splitmate-blue);
-  outline-offset: 1px;
+  outline: 2.7px solid var(--splitmate-blue, #38bdf8);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 3px var(--splitmate-blue, #38bdf8),
+    0 0 0.75rem #38bdf84a;
   z-index: 3;
+}
+
+/* Major card focus */
+.splitmate-card:focus-visible {
+  outline: 2.7px solid var(--splitmate-blue, #38bdf8);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 4px var(--splitmate-blue, #38bdf8),
+    0 0 2.5rem 0.5rem #38bdf862,
+    0 0.5rem 2.25rem 0 #62e6ae50;
+  z-index: 7;
 }
