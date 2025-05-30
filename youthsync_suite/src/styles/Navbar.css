@@ -93,6 +93,16 @@
   outline: none;
 }
 
+/* Keyboard/tab focus state (distinct from hover/click) */
+.ys-navbar-link:focus-visible {
+  background: #22252d;
+  color: #fff;
+  outline: 2.5px solid var(--accent, #38bdf8);
+  outline-offset: 1.5px;
+  box-shadow: 0 0 0 3.2px var(--accent, #38bdf8), 0 0 0.7rem #38bdf85f;
+  z-index: 8;
+}
+
 .ys-navbar-link-active {
   background: var(--accent);
   color: var(--primary);
