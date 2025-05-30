@@ -98,9 +98,9 @@
 .splitmate-amount-input,
 .splitmate-num-input {
   background: #0f172a;
-  border: 1.3px solid #232;
+  border: 0.08125rem solid #232; /* 1.3px */
   color: var(--splitmate-accent);
-  border-radius: 6.5px;
+  border-radius: 0.40625rem; /* 6.5px */
   padding: 0.3rem 0.92rem;
   font-size: 1.07rem;
   outline: none;
@@ -111,7 +111,7 @@
 .splitmate-amount-input:focus,
 .splitmate-num-input:focus {
   border-color: var(--splitmate-accent);
-  box-shadow: 0 0 0 2px #62e6ae35;
+  box-shadow: 0 0 0 0.125rem #62e6ae35;
   background: #151a21;
 }
 .splitmate-reset-btn {
