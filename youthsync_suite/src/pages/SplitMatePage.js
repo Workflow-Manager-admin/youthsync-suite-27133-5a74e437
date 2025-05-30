@@ -123,49 +123,59 @@ function SplitMatePage() {
           Bill splitter: Choose equal or custom shares.
         </p>
         <form
+          autoComplete="off"
           onSubmit={e => {
             e.preventDefault();
             split();
           }}
+          aria-labelledby="splitmate-heading"
+          role="region"
         >
-          <div className="splitmate-form-row">
+          <div className="splitmate-form-row" role="group" aria-label="Bill Split Settings">
             <div className="splitmate-top-inputs">
               <input
                 type="number"
-                placeholder="Total Amount"
                 min="0"
                 step="0.01"
                 value={amount}
                 onChange={e => setAmount(e.target.value)}
                 className="splitmate-amount-input"
                 required
+                placeholder="Total Amount (₹)"
+                aria-label="Total bill amount"
+                inputMode="decimal"
               />
               <input
                 type="number"
-                placeholder="People"
                 min="1"
                 max="15"
                 value={numPeople}
                 onChange={e => handleNumPeopleChange(e.target.value)}
                 className="splitmate-num-input"
                 required
+                placeholder="People"
+                aria-label="Number of people"
+                inputMode="numeric"
               />
               <button
                 type="button"
                 title="Reset all names/shares"
                 className="splitmate-reset-btn"
                 onClick={resetAll}
+                aria-label="Reset form"
               >
                 Reset
               </button>
             </div>
             <div className="splitmate-toggle-row">
-              <label className="select-none inline-flex gap-2 cursor-pointer">
+              <label className="select-none inline-flex gap-2 cursor-pointer" htmlFor="splitmate-custom-toggle">
                 <input
+                  id="splitmate-custom-toggle"
                   type="checkbox"
                   checked={useCustomShares}
                   onChange={e => setUseCustomShares(e.target.checked)}
                   className="splitmate-custom-toggle"
+                  aria-checked={useCustomShares}
                 />
                 Custom shares
               </label>
@@ -181,9 +191,11 @@ function SplitMatePage() {
               >
                 <input
                   className="splitmate-name-input"
-                  placeholder={`Name #${idx + 1}`}
+                  placeholder={`Name #${idx + 1}${names[idx] ? "" : " (e.g. Alex, Priya)"}`}
                   value={names[idx] || ""}
                   onChange={e => handleChange(idx, "name", e.target.value)}
+                  aria-label={`Person ${idx + 1} name`}
+                  maxLength={18}
                 />
                 {useCustomShares ? (
                   <input
@@ -195,15 +207,17 @@ function SplitMatePage() {
                     min={0}
                     max={100}
                     step={0.01}
+                    aria-label={`% share for person ${idx + 1}`}
                   />
                 ) : (
                   <input
                     className="splitmate-equal-input"
                     placeholder="Equal share"
                     disabled
+                    aria-label="Equal share"
                   />
                 )}
-                <span className="self-center splitmate-person-type">
+                <span className="self-center splitmate-person-type" aria-label="share type">
                   {useCustomShares && "%"}
                 </span>
               </div>
@@ -212,24 +226,35 @@ function SplitMatePage() {
           <button
             className="splitmate-btn-submit"
             type="submit"
+            aria-label="Calculate and split bill"
           >
             Split Bill
           </button>
         </form>
-        {error && <div className="splitmate-error">{error}</div>}
+        {error && (
+          <div className="splitmate-error" role="alert">
+            <ErrorIcon /> {error}
+          </div>
+        )}
         {results && (
-          <div className="splitmate-results-row">
+          <section
+            className="splitmate-results-row"
+            aria-label="Split results"
+            tabIndex={-1}
+          >
             {results.map((r, i) => (
               <div
                 key={i}
                 className="splitmate-person-card"
+                tabIndex={0}
+                aria-label={`${r.name}: ₹${r.share.toFixed(2)} (${useCustomShares ? "custom share" : "equal share"})`}
               >
                 <div className="splitmate-person-name">{r.name}</div>
                 <div className="splitmate-person-amount">₹{r.share.toFixed(2)}</div>
                 <div className="splitmate-person-type">{useCustomShares ? "custom" : "equal"}</div>
               </div>
             ))}
-          </div>
+          </section>
         )}
       </div>
     </div>
