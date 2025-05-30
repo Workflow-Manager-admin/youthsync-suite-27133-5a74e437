@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import "../styles/splitmate.css";
 
+// Accent icon for error feedback
+function ErrorIcon() {
+  return (
+    <span
+      style={{
+        color: "#ff4680",
+        fontWeight: "bold",
+        fontSize: "1.12em",
+        marginRight: "0.14em",
+        display: "inline-flex",
+        alignItems: "center"
+      }}
+      aria-hidden="true"
+    >&#9888;</span>
+  );
+}
+
 /**
  * SplitMate Page: Bill splitter with default & custom names/shares
  */
