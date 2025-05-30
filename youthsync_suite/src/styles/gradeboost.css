@@ -114,7 +114,7 @@
   border: 1.2px solid var(--gb-border);
   color: var(--gb-accent);
   font-weight: 500;
-  border-radius: 5.7px;
+  border-radius: 0.35625rem; /* 5.7px */
   padding: 0.265rem 0.78rem;
   font-size: 1.01rem;
   outline: none;
