@@ -1,10 +1,10 @@
 .ys-navbar {
-  background: var(--primary);
+  background: var(--nav-bg, var(--primary));
   border-bottom: 1px solid var(--border);
   position: fixed;
   top: 0; left: 0; width: 100vw;
   z-index: 40;
-  box-shadow: 0 2px 18px 0 rgba(24,24,27,0.10);
+  box-shadow: var(--box-shadow-navbar, 0 2px 18px 0 rgba(24,24,27,0.10));
 }
 
 .ys-navbar-inner {
