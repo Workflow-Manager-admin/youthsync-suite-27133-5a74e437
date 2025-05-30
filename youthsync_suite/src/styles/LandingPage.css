@@ -29,6 +29,7 @@
   letter-spacing: -.01em;
   background: linear-gradient(90deg, #fff 20%, #c3e4fc 100%);
   color: transparent;
+  background: var(--gradient-navbar-title, linear-gradient(90deg, #fff 20%, #c3e4fc 100%));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,7 +85,7 @@
   opacity: 0.62;
   font-family: 'Fira Mono', 'Menlo', 'monospace', monospace;
   margin-top: 38px;
-  color: #b6d5f7;
+  color: var(--text-secondary);
 }
 
 /* Glow and icon card enhancements for landing page */
