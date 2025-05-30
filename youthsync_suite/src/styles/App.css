@@ -1,15 +1,79 @@
 :root {
+  /* Brand/Core */
   --primary: #18181b;
   --secondary: #27272a;
   --accent: #38bdf8;
-  --dark-bg: #18181b;
-  --light-bg: #22232a;
+  --accent-dark: #36b8f8;
+  --accent-turquoise: #20eedc;
+  --accent-turquoise-dark: #21e1c1;
+  --accent-teal: #62e6ae;
+  --accent-pink: #ff4680;
+  --accent-purple: #b773f7;
+
+  /* Text & muted */
   --text-color: #fff;
   --text-secondary: #b6d5f7;
-  --border: #222;
+  --text-muted: #8ba0b3;
   --footer-text: #8ba0b3;
+
+  /* Borders */
+  --border: #222;
+  --border-light: #23293a;
+  --border-accent: #38bdf8;
+  --border-turquoise: #21e1c1;
+  --border-teal: #62e6ae;
+  --border-pink: #ff4680;
+
+  /* Backgrounds */
+  --dark-bg: #18181b;
+  --light-bg: #22232a;
+  --nav-bg: #18181b;
+  --card-bg: #22232a;
+  --landing-bg-primary: #232938;
+  --landing-bg-secondary: #212428;
+  --splitmate-bg: #162028;
+  --gradeboost-bg: #22232a;
+  --focusflow-bg: #181f2b;
+  
+  /* Icon & Card Gradients */
+  --gradient-gradeboost-icon: linear-gradient(135deg, #263042 70%, #20c9b6 140%);
+  --gradient-splitmate-icon: linear-gradient(145deg, #232938 60%, #4188cd 100%, #62e6ae 180%);
+  --gradient-focusflow-icon: linear-gradient(145deg, #292f42 30%, #58c5fc 90%, #43f7e7 160%);
+  --gradient-gradeboost-card: linear-gradient(110deg, #21e1c1 70%, #38bdf8 130%);
+  --gradient-gradeboost-title: linear-gradient(110deg, #21e1c1 70%, #38bdf8 130%);
+  --gradient-navbar-logo: linear-gradient(90deg, #38bdf8 20%, #b6d5f7 100%);
+  --gradient-navbar-title: linear-gradient(90deg, #38bdf8 20%, #b6d5f7 100%);
+  --gradient-navbar-link-active: var(--accent);
+
+  /* Landing Glows & Shadows */
+  --glow-main: 0 0 16px 4px var(--accent);
+  --glow-gradeboost: 0 2px 28px 0 #29f3d620;
+  --glow-splitmate: 0 0 54px 10px #62e6ae84,0 0 0px 3px #7ae6a460,0 0 62px 14px #53e69072;
+  --glow-focusflow: 0 0 48px 12px #38bdf8cc, 0 0 0px 2px #b773f792, 0 0 72px 20px #38bdf870;
+
+  /* App/Component-specific Shadows */
+  --box-shadow-navbar: 0 2px 18px 0 rgba(24,24,27,0.10);
+  --box-shadow-btn: 0 0 8px #38bdf857;
+  --box-shadow-card: 0 8px 38px 8px #1be4e53a, 0 1.5px 4px #38bdf811;
+  --box-shadow-card-focusflow: 0 8px 36px 4px #38bdf844, 0 2px 16px #7fd0ff1a;
+  --box-shadow-card-splitmate: 0 8px 36px 0 #62e6ae50, 0 1.5px 8px #38bdf822;
+  --box-shadow-card-landing: 0 2px 28px 0 #29f3d620;
+  --box-shadow-btn-calc: 0 0 13px #20eedc3d;
+
+  /* State, Error, Danger */
   --danger: #ff4680;
-  --glow: 0 0 16px 4px var(--accent);
+  --danger-bg: #ff468018;
+  --danger-dark: #fa2360;
+  --danger-shadow: 0 2px 12px #ff46802c;
+
+  /* Accents for Progress & Interactivity */
+  --progress-accent: #38bdf8;
+  --progress-shadow: 0 0 8px #38bdf886;
+  --complete-glow: 0 0 12px 3px #38bdf87c,0 1px 8px #b773f766;
+
+  /* Focus rings */
+  --focus-accent: 0 0 0 3px #38bdf87c;
+  --focus-danger: 0 0 0 3px #ff468083;
 }
 
 .ys-dark {
