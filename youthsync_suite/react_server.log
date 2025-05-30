@@ -404,3 +404,175 @@ ERROR in ./src/pages/LandingPage.js 6:0-47
 Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src/pages'
 
 webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src'
+LOG from webpack.FileSystemInfo
+<w> Managed item /home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/node_modules/react-router-dom isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)
++ 13 hidden lines
+
+ERROR in ./src/App.js 6:0-62
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src'
+
+ERROR in ./src/components/Navbar.js 6:0-53
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src/components'
+
+ERROR in ./src/index.js 6:0-49
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src'
+
+ERROR in ./src/pages/LandingPage.js 6:0-47
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/src/pages'
+
+webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Attempted import error: 'useLocation' is not exported from 'react-router-dom' (imported as 'useLocation').
+LOG from webpack.FileSystemInfo
+<w> Managed item /home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/node_modules/react-router isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)
++ 13 hidden lines
+
+ERROR in ./src/App.js 26:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 35:37-43
+export 'Routes' (imported as 'Routes') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 37:40-45
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 48:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 59:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 70:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 106:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 15:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 20:38-42
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 87:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 95:30-34
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/index.js 17:33-46
+export 'BrowserRouter' (imported as 'BrowserRouter') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 171:19-30
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 239:10-21
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./node_modules/react-router-dom/dist/index.mjs 13:0-66
+Module not found: Error: Can't resolve 'react-router/dom' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/node_modules/react-router-dom/dist'
+
+ERROR in ./node_modules/react-router-dom/dist/index.mjs 14:0-29
+Module not found: Error: Can't resolve 'react-router' in '/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite/node_modules/react-router-dom/dist'
+
+webpack compiled with 16 errors
+Compiling...
+Failed to compile.
+
+Attempted import error: 'useLocation' is not exported from 'react-router-dom' (imported as 'useLocation').
+ERROR in ./src/App.js 26:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 35:37-43
+export 'Routes' (imported as 'Routes') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 37:40-45
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 48:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 59:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 70:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 106:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 15:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 20:38-42
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 87:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 95:30-34
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/index.js 17:33-46
+export 'BrowserRouter' (imported as 'BrowserRouter') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 171:19-30
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 239:10-21
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+webpack compiled with 14 errors
+Compiling...
+Failed to compile.
+
+Attempted import error: 'useLocation' is not exported from 'react-router-dom' (imported as 'useLocation').
+ERROR in ./src/App.js 26:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 35:37-43
+export 'Routes' (imported as 'Routes') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 37:40-45
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 48:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 59:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 70:39-44
+export 'Route' (imported as 'Route') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/App.js 106:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 15:19-30
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 20:38-42
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 87:10-21
+export 'useLocation' (imported as 'useLocation') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/components/Navbar.js 95:30-34
+export 'Link' (imported as 'Link') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/index.js 17:33-46
+export 'BrowserRouter' (imported as 'BrowserRouter') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 171:19-30
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+ERROR in ./src/pages/LandingPage.js 239:10-21
+export 'useNavigate' (imported as 'useNavigate') was not found in 'react-router-dom' (module has no exports)
+
+webpack compiled with 14 errors
