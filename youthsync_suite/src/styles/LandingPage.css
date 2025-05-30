@@ -120,9 +120,81 @@
     box-shadow 0.22s cubic-bezier(0.5,0.14,0.21,1),
     transform 0.2s;
 }
+
+/* --------- Distinct Icon Background & Glow per Tool --------- */
+.ys-landing-gradeboost .icon-circle {
+  background: linear-gradient(135deg, #263042 70%, #20c9b6 140%);
+  border-color: #21e1c1 #38bdf8 #38bdf8 #263042;
+  box-shadow: 0 2px 28px 0 #29f3d620;
+}
+.ys-landing-gradeboost .icon-card-title {
+  color: #21e1c1;
+  text-shadow: 0 3px 10px #21e1c160, 0 2px 18px #38bdf822;
+}
+.ys-landing-gradeboost .icon-card-desc {
+  color: #54efd9;
+}
+.ys-landing-gradeboost .icon-circle:hover,
+.ys-landing-gradeboost .icon-circle:focus {
+  /* Glow: turquoise-cyan */
+  filter: drop-shadow(0 0 48px #20eedc70) drop-shadow(0 0 14px #20eedc90);
+  box-shadow:
+    0 0 44px 10px #20eedca9,
+    0 0 0px 3px #20eedc80,
+    0 0 62px 14px #21e1c172;
+  outline: 0;
+}
+
+/* --- SplitMate: teal, blue, aqua, gradient, soft/greenish glow --- */
+.ys-landing-splitmate .icon-circle {
+  background: linear-gradient(145deg, #232938 60%, #4188cd 100%, #62e6ae 180%);
+  border-color: #62e6ae #38bdf8 #4188cd #232938;
+}
+.ys-landing-splitmate .icon-card-title {
+  color: #62e6ae;
+  text-shadow: 0 3px 10px #62e6ae88, 0 2px 18px #36b8c280;
+}
+.ys-landing-splitmate .icon-card-desc {
+  color: #7ee6c7;
+}
+.ys-landing-splitmate .icon-circle:hover,
+.ys-landing-splitmate .icon-circle:focus {
+  /* Glow: teal-green */
+  filter: drop-shadow(0 0 40px #62e6ae99) drop-shadow(0 0 18px #38bdf880);
+  box-shadow:
+    0 0 54px 10px #62e6ae84,
+    0 0 0px 3px #7ae6a460,
+    0 0 62px 14px #53e69072;
+  outline: 0;
+}
+
+/* --- FocusFlow: sky blue-teal, energetic linear with magenta glow --- */
+.ys-landing-focusflow .icon-circle {
+  background: linear-gradient(145deg, #292f42 30%, #58c5fc 90%, #43f7e7 160%);
+  border-color: #43f7e7 #58c5fc #292f42 #38bdf8;
+}
+.ys-landing-focusflow .icon-card-title {
+  color: #58c5fc;
+  text-shadow: 0 3px 10px #38bdf875, 0 2px 24px #b773f722;
+}
+.ys-landing-focusflow .icon-card-desc {
+  color: #7dc9fa;
+}
+.ys-landing-focusflow .icon-circle:hover,
+.ys-landing-focusflow .icon-circle:focus {
+  /* Glow: cool blue-cyan-magenta */
+  filter: drop-shadow(0 0 40px #38bdf8b0) drop-shadow(0 0 20px #b773f799);
+  box-shadow:
+    0 0 48px 12px #38bdf8cc,
+    0 0 0px 2px #b773f792,
+    0 0 72px 20px #38bdf870;
+  outline: 0;
+}
+
+/* fallback: base icon hover */
 .icon-circle:hover,
 .icon-circle:focus {
-  /* Real glow on hover/focus icon only */
+  /* fallback base */
   filter: drop-shadow(0 0 32px #38bdf8e0) drop-shadow(0 0 8px #7ed3fc80);
   box-shadow:
     0 0 36px 8px #38bdf8b8,
