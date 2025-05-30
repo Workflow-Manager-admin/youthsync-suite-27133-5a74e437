@@ -121,13 +121,13 @@
 }
 .ys-landing-icons-row > button:hover span,
 .ys-landing-icons-row > button:focus span {
-  /* Stronger, more vibrant neon/cyan glow + added spread/opacity */
-  filter: drop-shadow(0 0 46px #38bdf8fc) drop-shadow(0 0 16px #7ed3fcbb);
+  /* Softer, still vivid cyan glow (reduced spread and opacity for subtler effect) */
+  filter: drop-shadow(0 0 32px #38bdf8e0) drop-shadow(0 0 8px #7ed3fc80);
   box-shadow:
-    0 0 52px 16px #38bdf8e0,
-    0 0 0px 2px #38c7fa80,
-    0 0 90px 22px #38bdf876;
-  /* If browser doesn't support multiple drop-shadows, fall back, but now have box-shadow as backup */
+    0 0 36px 8px #38bdf8b8,
+    0 0 0px 2px #38c7fa60,
+    0 0 60px 14px #38bdf852;
+  /* If browser doesn't support multiple drop-shadows, fall back, but box-shadow is a backup */
   transform: scale(1.11);
 }
 
