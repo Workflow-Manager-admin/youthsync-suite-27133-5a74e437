@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CircularProgress from "../components/CircularProgress";
+import "../styles/gradeboost.css";
 
 // Grade conversion table
 const GRADES = [
