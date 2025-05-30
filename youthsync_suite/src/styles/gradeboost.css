@@ -319,7 +319,7 @@
 .gb-btn:focus-visible,
 .gb-remove-btn:focus-visible {
   outline: 2px solid var(--gb-accent2);
-  outline-offset: 1.5px;
+  outline-offset: 0.09375rem; /* 1.5px */
   z-index: 6;
 }
 .gb-select:disabled,
