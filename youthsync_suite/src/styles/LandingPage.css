@@ -214,7 +214,7 @@
   text-align: center;
   color: #fff;
   text-shadow:
-    0 2px 12px #38bdf855,
+    0 2px 12px var(--accent)55,
     0 1.5px 10px #212c4880;
   letter-spacing: .01em;
   transition: color 0.2s;
@@ -222,7 +222,7 @@
 
 .ys-landing-icons-row > button > .icon-card-desc {
   max-width: 168px;
-  color: #7ed3fc;
+  color: var(--accent-teal, #7ed3fc);
   opacity: 0.77;
   text-align: center;
   font-size: 0.98rem;
