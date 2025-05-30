@@ -318,9 +318,21 @@
 .gb-input:focus-visible,
 .gb-btn:focus-visible,
 .gb-remove-btn:focus-visible {
-  outline: 2px solid var(--gb-accent2);
-  outline-offset: 0.09375rem; /* 1.5px */
+  outline: 2.5px solid var(--gb-accent2, #38bdf8);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2.5px var(--gb-accent2, #38bdf8), 0 0 1rem #20eedc35;
   z-index: 6;
+}
+
+/* Major card focus for accessibility */
+.gradeboost-card:focus-visible {
+  outline: 2.5px solid var(--gb-accent2, #38bdf8);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 4px var(--gb-accent2, #38bdf8),
+    0 0 2.5rem 0.5rem #20eedc45,
+    var(--gb-shadow, 0 8px 38px 8px #1be4e53a, 0 1.5px 4px #38bdf811);
+  z-index: 7;
 }
 .gb-select:disabled,
 .gb-input:disabled {
