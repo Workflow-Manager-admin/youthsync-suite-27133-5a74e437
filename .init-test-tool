@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/youthsync-suite-27133-5a74e437/youthsync_suite"
+}
